@@ -1,0 +1,18 @@
+name: Release
+
+# Push a tag such as v1.0.0 to package the addon and upload it to CurseForge.
+on:
+  push:
+    tags:
+      - "v*"
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    env:
+      CF_API_KEY: ${{ secrets.CF_API_KEY }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # the packager reads the tag history for the changelog
+      - uses: BigWigsMods/packager@v2

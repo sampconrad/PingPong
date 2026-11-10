@@ -1,0 +1,21 @@
+package-as: PingPong
+
+# The addon lives in the PingPong/ subfolder: lift it to the top of the zip.
+move-folders:
+  PingPong/PingPong: PingPong
+
+# Everything else in the repo is tooling and doesn't ship.
+ignore:
+  - .claude
+  - .github
+  - media
+  - scripts
+  - tests
+  - .gitattributes
+  - .gitignore
+  - .mcp.json
+  - .pre-commit-config.yaml
+  - CLAUDE.md
+  - README.md
+  - selene.toml
+  - stylua.toml
