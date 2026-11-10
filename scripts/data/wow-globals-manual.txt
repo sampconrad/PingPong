@@ -1,0 +1,4 @@
+# Names check-globals.ps1 accepts that Blizzard's UI source can't confirm. Say why for each group.
+
+# Ours
+PingPongTest

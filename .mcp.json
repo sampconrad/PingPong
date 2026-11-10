@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "wow-api": {
+      "type": "stdio",
+      "command": "pwsh",
+      "args": ["-NoProfile", "-File", "scripts/wow-api-mcp.ps1"]
+    }
+  }
+}

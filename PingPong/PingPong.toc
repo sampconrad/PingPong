@@ -1,0 +1,19 @@
+## Interface: 120105, 120100, 16001
+## Interface-Forever: 16001
+
+## Title: PingPong
+## Notes: The easy way to show your group a spot. No map pins to create, no chat links to share or click. Simply ping a location and they see it on their map. Group members need PingPong installed too.
+## Version: 1.0.0
+## IconTexture: Interface\AddOns\PingPong\Assets\logo
+
+## Author: sampconrad
+
+## DefaultState: enabled
+## LoadOnDemand: 0
+
+Core\Init.lua
+Core\Codec.lua
+Map\PingFrame.lua
+Map\Hint.lua
+Map\MapProvider.lua
+Core\Comms.lua

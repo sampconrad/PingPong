@@ -1,0 +1,33 @@
+{
+  "enabledMcpjsonServers": ["wow-api"],
+  "enableAllProjectMcpServers": true,
+  "permissions": {
+    "allow": [
+      "Bash(pwsh ./scripts/*)",
+      "Bash(pwsh -NoProfile -File ./scripts/*)",
+      "Bash(stylua:*)",
+      "Bash(selene:*)",
+      "Bash(pre-commit run:*)",
+      "Bash(git status:*)",
+      "Bash(git diff:*)",
+      "Bash(git log:*)",
+      "Bash(git show:*)",
+      "Bash(git branch:*)",
+      "Bash(git add:*)"
+    ]
+  },
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "pwsh -NoProfile -File \"$CLAUDE_PROJECT_DIR/scripts/claude-format-hook.ps1\"",
+            "timeout": 15
+          }
+        ]
+      }
+    ]
+  }
+}
