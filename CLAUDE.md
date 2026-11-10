@@ -4,8 +4,8 @@ Standalone Retail (12.x) and Forever addon: double-left-click or Alt+left-click 
 
 ## What's where
 
-- `PingPong/PingPong.toc` is the load order: `Init`, `Codec`, `PingFrame`, `Hint`, `MapProvider`, `Comms`.
-- `Core/`: `Init.lua` (constants and `IsSecret`), `Codec.lua` (message format), `Comms.lua` (send and receive).
+- `PingPong/PingPong.toc` is the load order: `Init`, `Locales`, `Codec`, `PingFrame`, `Hint`, `MapProvider`, `Comms`.
+- `Core/`: `Init.lua` (constants and `IsSecret`), `Locales.lua` (`PingPong.L`: every shown text goes through it, English text as the key, translations in all 11 client locales, plus the TOC's `Notes-<locale>` lines), `Codec.lua` (message format), `Comms.lua` (send and receive).
 - `Map/`: `MapProvider.lua` (double-click and Alt+click detection, placing and holding pings), `PingFrame.lua` (the animation), `Hint.lua` (the logo on the map that expands on hover to show the Alt + Left Click shortcut, and by itself to show a short message).
 - `Assets/`: the BLP art. Paths name the folder: `Interface\AddOns\PingPong\Assets\`.
 - `tests/`: `wowstub.lua` fakes the client, `spec_*.lua` cover the pure logic. A pass doesn't replace in-game testing.

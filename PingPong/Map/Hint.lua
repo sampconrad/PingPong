@@ -22,7 +22,7 @@ local Hint = {}
 PingPong.Hint = Hint
 
 local ART = "Interface\\AddOns\\PingPong\\Assets\\"
-local TEXT = "on the map to ping a location for your group"
+local TEXT = PingPong.L["on the map to ping a location for your group"]
 local ROW_HEIGHT = 32 -- the pin button's height
 local ICON_SIZE = 18
 local LOGO_GAP = 5

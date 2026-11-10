@@ -3,7 +3,17 @@
 
 ## Title: PingPong
 ## Notes: The easy way to show your group a spot. No map pins to create, no chat links to share or click. Simply ping a location and they see it on their map. Group members need PingPong installed too.
-## Version: 1.1.0
+## Notes-deDE: Die einfache Art, deiner Gruppe einen Ort zu zeigen. Keine Kartenmarkierungen, keine Chat-Links. Einfach einen Ort pingen, und alle sehen ihn auf ihrer Karte. Gruppenmitglieder brauchen ebenfalls PingPong.
+## Notes-esES: La forma fácil de mostrar un lugar a tu grupo. Sin crear marcadores ni compartir enlaces en el chat. Solo haz ping en un lugar y lo verán en su mapa. Los miembros del grupo también necesitan PingPong.
+## Notes-esMX: La forma fácil de mostrar un lugar a tu grupo. Sin crear marcadores ni compartir enlaces en el chat. Solo haz ping en un lugar y lo verán en su mapa. Los miembros del grupo también necesitan PingPong.
+## Notes-frFR: La façon simple de montrer un endroit à votre groupe. Pas de repères à créer, pas de liens à partager dans le chat. Pingez un lieu et il apparaît sur leur carte. Les membres du groupe doivent aussi avoir PingPong.
+## Notes-itIT: Il modo semplice per mostrare un punto al tuo gruppo. Niente segnaposto da creare, niente link in chat da condividere. Basta fare ping su un luogo e lo vedranno sulla loro mappa. Anche i membri del gruppo devono avere PingPong.
+## Notes-koKR: 파티원에게 위치를 쉽게 알리는 방법입니다. 지도 핀을 만들거나 채팅 링크를 공유할 필요 없이 위치에 핑을 찍으면 파티원의 지도에 표시됩니다. 파티원도 PingPong을 설치해야 합니다.
+## Notes-ptBR: O jeito fácil de mostrar um local ao seu grupo. Sem criar marcadores no mapa, sem links de chat para compartilhar. Basta pingar um local e todos o veem no mapa. Os membros do grupo também precisam do PingPong.
+## Notes-ruRU: Простой способ показать группе место. Не нужно ставить метки на карте или отправлять ссылки в чат. Просто пингуйте место, и оно появится на картах игроков. PingPong должен быть установлен и у остальных участников группы.
+## Notes-zhCN: 向队伍展示位置的简单方式。无需创建地图标记，也无需分享聊天链接。只需标记一个位置，队友就能在地图上看到。队友也需要安装 PingPong。
+## Notes-zhTW: 向隊伍展示位置的簡單方式。無需建立地圖標記，也無需分享聊天連結。只需標記一個位置，隊友就能在地圖上看到。隊友也需要安裝 PingPong。
+## Version: 1.2.0
 ## IconTexture: Interface\AddOns\PingPong\Assets\logo
 ## X-Curse-Project-ID: 1796278
 
@@ -13,6 +23,7 @@
 ## LoadOnDemand: 0
 
 Core\Init.lua
+Core\Locales.lua
 Core\Codec.lua
 Map\PingFrame.lua
 Map\Hint.lua

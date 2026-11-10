@@ -9,7 +9,7 @@ local ADDON = "PingPong"
 package.path = root .. "/tests/?.lua;" .. package.path
 local Stub = require("wowstub")
 
-local SPECS = { "spec_codec", "spec_pingpong" }
+local SPECS = { "spec_codec", "spec_locales", "spec_pingpong" }
 
 local failures = 0
 local fileCount = 0

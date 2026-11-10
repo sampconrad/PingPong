@@ -23,9 +23,12 @@ local Map = PingPong.Map
 local IsSecret = PingPong.IsSecret
 
 local GROUP_CHANNELS = { PARTY = true, RAID = true, INSTANCE_CHAT = true }
-local LOCKDOWN_TEXT = "PingPong: pings can't be shared right now."
-local COMBAT_TEXT = "PingPong: the map can't be opened from chat during combat."
-local BURST_TEXT = "Too many pings, wait a few seconds"
+local L = PingPong.L
+local LOCKDOWN_TEXT = L["PingPong: pings can't be shared right now."]
+local COMBAT_TEXT = L["PingPong: the map can't be opened from chat during combat."]
+local BURST_TEXT = L["Too many pings, wait a few seconds"]
+local PINGED_IN_TEXT = L["%s pinged the map in %s."]
+local PINGED_TEXT = L["%s pinged the map."]
 
 local LINK_PREFIX = "addon:" .. PingPong.PREFIX .. ":"
 local LINK_FORMAT = "|cff71d5ff|H" .. LINK_PREFIX .. "%d|h[%s]|h|r"
@@ -161,8 +164,7 @@ local function PrintUnseenPing(sender, mapID, shownName)
   local info = _G.C_Map.GetMapInfo(mapID)
   local name = shownName or _G.Ambiguate(sender, "short")
   local zone = info and info.name and LINK_FORMAT:format(mapID, info.name)
-  local line = zone and ("%s pinged the map in %s."):format(name, zone)
-    or ("%s pinged the map."):format(name)
+  local line = zone and PINGED_IN_TEXT:format(name, zone) or PINGED_TEXT:format(name)
   _G.DEFAULT_CHAT_FRAME:AddMessage("|cffffd200PingPong:|r " .. line)
 end
 
