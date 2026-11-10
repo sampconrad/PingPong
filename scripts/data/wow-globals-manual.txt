@@ -2,3 +2,7 @@
 
 # Ours
 PingPongTest
+
+# Engine functions that exist in game but aren't called from Blizzard's UI source
+# (PlaySoundFile is documented at warcraft.wiki.gg/wiki/API_PlaySoundFile)
+PlaySoundFile

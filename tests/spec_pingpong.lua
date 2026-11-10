@@ -63,7 +63,7 @@ local function CheckMessages(check, PingPong, env)
   env.GetTime = function()
     return now
   end
-  env.PlaySound = function()
+  env.PlaySoundFile = function()
     sounds = sounds + 1
   end
   env.Ambiguate = function(name)
@@ -220,9 +220,12 @@ local function CheckMessages(check, PingPong, env)
 end
 
 local function CheckBurstLimit(check, PingPong, env)
-  local now, added, sent, messages = 9000, 0, 0, 0
+  local now, added, sent, messages, played = 9000, 0, 0, 0, {}
   env.GetTime = function()
     return now
+  end
+  env.PlaySoundFile = function(path)
+    played[#played + 1] = path:match("[^\\]+$")
   end
   local RealShowMessage = PingPong.Hint.ShowMessage
   PingPong.Hint.ShowMessage = function()
@@ -266,14 +269,16 @@ local function CheckBurstLimit(check, PingPong, env)
   end
   check("a steady pace is never limited", added, PingPong.BURST_PINGS * 3)
 
-  now, added = 10000, 0
+  now, added, played = 10000, 0, {}
   for _ = 1, PingPong.BURST_PINGS do
     PingPong.Comms.SendPing(2248, 0.5, 0.25)
     now = now + 1
   end
   check("own burst is sent", sent, PingPong.BURST_PINGS)
   check("own burst shows no message", messages, 0)
+  check("own burst only plays pings", table.concat(played, ","), ("ping.ogg,"):rep(4):sub(1, -2))
   PingPong.Comms.SendPing(2248, 0.5, 0.25)
+  check("own ping over the limit plays the error", played[#played], "error.ogg")
   check("own ping over the limit is not sent", sent, PingPong.BURST_PINGS)
   check("own ping over the limit is not drawn", added, PingPong.BURST_PINGS)
   check("own ping over the limit shows a message", messages, 1)
