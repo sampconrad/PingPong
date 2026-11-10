@@ -1,4 +1,10 @@
+<p align="center">
+  <img src="media/PingPong-icon.png" alt="PingPong icon" width="128">
+</p>
+
 # PingPong
+
+![PingPong preview](media/PingPong-preview.png)
 
 Double-left-click or Alt+left-click the world map to ping it for your group, the way a click on the minimap does.
 
